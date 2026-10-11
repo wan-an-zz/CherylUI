@@ -81,7 +81,8 @@
                             <ItemsPresenter  Name="PART_ItemsPresenter">
                                 <ItemsPresenter.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <UniformGrid Columns="{Binding Items}" Rows="1" />
+                                        <!-- Rows="1" and Columns left at 0: UniformGrid auto-computes one column per item. -->
+                                        <UniformGrid Rows="1" />
                                     </ItemsPanelTemplate>
                                 </ItemsPresenter.ItemsPanel>
                             </ItemsPresenter>

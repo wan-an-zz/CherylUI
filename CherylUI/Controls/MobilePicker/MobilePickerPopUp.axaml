@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mobilePicker="clr-namespace:CherylUI.Controls.MobilePicker"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:DataType="mobilePicker:MobilePickerPopUpVM"
     xmlns:glassMorphism="clr-namespace:CherylUI.Controls.GlassMorphism">
     <UserControl.DataContext>
         <mobilePicker:MobilePickerPopUpVM />

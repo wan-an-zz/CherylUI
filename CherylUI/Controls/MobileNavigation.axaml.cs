@@ -45,7 +45,7 @@ namespace CherylUI.Controls;
             
             instance.CurrentPage = page;
             
-            var x = instance.GetTemplateChildren();
+            var x = instance.GetTemplateDescendants();
             TransitioningContentControl baseCT = (TransitioningContentControl) x.First(f => f.Name == "base");
             
             baseCT.Content = page;
@@ -72,7 +72,7 @@ namespace CherylUI.Controls;
             
             
 
-            var x = instance.GetTemplateChildren();
+            var x = instance.GetTemplateDescendants();
           
             TransitioningContentControl baseCT = (TransitioningContentControl) x.First(f => f.Name == "base");
 

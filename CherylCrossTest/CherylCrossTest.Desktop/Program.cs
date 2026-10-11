@@ -1,6 +1,6 @@
 ﻿using System;
 using Avalonia;
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 
 namespace CherylCrossTest.Desktop;
 
@@ -18,5 +18,6 @@ class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .LogToTrace()
-            .UseReactiveUI();
+            // ReactiveUI.Avalonia 12.x takes a ReactiveUIBuilder configuration callback.
+            .UseReactiveUI(_ => { });
 }

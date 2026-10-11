@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Versioning;
 using Avalonia;
 using Avalonia.Browser;
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 using CherylCrossTest;
 
 [assembly: SupportedOSPlatform("browser")]
@@ -9,7 +9,7 @@ using CherylCrossTest;
 internal partial class Program
 {
     private static void Main(string[] args) => BuildAvaloniaApp()
-        .UseReactiveUI()
+        .UseReactiveUI(_ => { })
         .StartBrowserAppAsync("out");
 
     public static AppBuilder BuildAvaloniaApp()

@@ -11,8 +11,8 @@
 
                 <TextBox
                     Margin="5"
+                    PlaceholderText="Water"
                     Text=""
-                    Watermark="Water"
                     Width="200" />
                 <TextBox
                     Margin="5"
@@ -132,10 +132,10 @@
                                     Classes="Secondary"
                                     DockPanel.Dock="Top"
                                     Name="floatingWatermark"
-                                    Text="{TemplateBinding Watermark}">
+                                    Text="{TemplateBinding PlaceholderText}">
                                     <TextBlock.IsVisible>
                                         <MultiBinding Converter="{x:Static BoolConverters.And}">
-                                            <Binding Path="UseFloatingWatermark" RelativeSource="{RelativeSource TemplatedParent}" />
+                                            <Binding Path="UseFloatingPlaceholder" RelativeSource="{RelativeSource TemplatedParent}" />
                                             <Binding
                                                 Converter="{x:Static StringConverters.IsNotNullOrEmpty}"
                                                 Path="Text"
@@ -166,7 +166,7 @@
                                                     Margin="0,3,0,-4"
                                                     Name="watermark"
                                                     Opacity="0.5"
-                                                    Text="{TemplateBinding Watermark}"
+                                                    Text="{TemplateBinding PlaceholderText}"
                                                     TextAlignment="{TemplateBinding TextAlignment}"
                                                     TextWrapping="{TemplateBinding TextWrapping}" />
                                                 <TextPresenter

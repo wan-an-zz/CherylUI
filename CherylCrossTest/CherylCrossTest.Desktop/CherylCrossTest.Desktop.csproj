@@ -2,8 +2,8 @@
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <!--If you are willing to use Windows/MacOS native APIs you will need to create 3 projects.
-        One for Windows with net7.0-windows TFM, one for MacOS with net7.0-macos and one with net7.0 TFM for Linux.-->
-        <TargetFramework>net8.0</TargetFramework>
+        One for Windows with net10.0-windows TFM, one for MacOS with net10.0-macos and one with net10.0 TFM for Linux.-->
+        <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     </PropertyGroup>
@@ -13,9 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia.Desktop" Version="11.2.0-beta2" />
-        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.0-beta2" />
+        <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,6 +1,9 @@
 <Project>
   <PropertyGroup>
     <Nullable>enable</Nullable>
-    <AvaloniaVersion>11.0.0-preview5</AvaloniaVersion>
+    <AvaloniaVersion>12.1.4</AvaloniaVersion>
+    <!-- Avalonia 12 ships ReactiveUI support as a separate, ReactiveUI-owned package. -->
+    <ReactiveUIAvaloniaVersion>12.1.6</ReactiveUIAvaloniaVersion>
+    <SkiaSharpVersion>3.119.4</SkiaSharpVersion>
   </PropertyGroup>
 </Project>

@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <!-- Avalonia 12 dropped .NET Standard / .NET Framework support: only .NET 8+ is supported. -->
+        <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -9,16 +10,16 @@
         <Description>https://github.com/kikipoulet/CherylUI</Description>
         <PackageProjectUrl>https://github.com/kikipoulet/CherylUI</PackageProjectUrl>
         <RepositoryUrl>https://github.com/kikipoulet/CherylUI</RepositoryUrl>
-        <PackageVersion>1.2.0</PackageVersion>
-        <LangVersion>10</LangVersion>
+        <PackageVersion>2.0.0</PackageVersion>
+        <LangVersion>latest</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Avalonia.Skia" Version="11.2.0-beta2" />
-      <PackageReference Include="Avalonia.Themes.Simple" Version="11.2.0-beta2" />
-      <PackageReference Include="ReactiveUI" Version="20.1.52" />
-      <PackageReference Include="SkiaSharp" Version="3.0.0-preview.4.1" />
+      <PackageReference Include="Avalonia.Skia" Version="12.1.4" />
+      <PackageReference Include="Avalonia.Themes.Simple" Version="12.1.4" />
+      <PackageReference Include="ReactiveUI" Version="26.0.1" />
+      <PackageReference Include="SkiaSharp" Version="3.119.4" />
     </ItemGroup>
 
     <ItemGroup>
