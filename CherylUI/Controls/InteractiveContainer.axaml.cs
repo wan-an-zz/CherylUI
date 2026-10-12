@@ -1,14 +1,28 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
+using CherylUI.Dialogs;
 
 namespace CherylUI.Controls;
 
 public partial class InteractiveContainer : UserControl
 {
+    /// <summary>
+    /// The <see cref="ICherylDialogManager"/> hosted by every <see cref="InteractiveContainer"/>.
+    /// Use it to open fluent dialogs from a view model with no wiring at all:
+    /// <code>
+    /// InteractiveContainer.DialogManager.CreateDialog()
+    ///     .WithTitle("Hello")
+    ///     .WithContent("World")
+    ///     .WithActionButton("Ok", _ =&gt; { }, true)
+    ///     .TryShow();
+    /// </code>
+    /// </summary>
+    public static ICherylDialogManager DialogManager => CherylDialogManager.Default;
+
     public InteractiveContainer()
     {
         InitializeComponent();

@@ -1,4 +1,4 @@
-﻿<UserControl
+<UserControl
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d"
@@ -6,6 +6,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:controls="clr-namespace:CherylUI.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dialogs="clr-namespace:CherylUI.Dialogs"
     xmlns:glassmorphism="clr-namespace:CherylUI.Glassmorphism"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -109,6 +110,9 @@
                             <ContentControl Content="{TemplateBinding DialogContent}" />
 
                         </Border>
+
+                        <!--  Fluent dialog host (InteractiveContainer.DialogManager), over everything  -->
+                        <controls:CherylDialogHost Name="DialogHost" Manager="{x:Static dialogs:CherylDialogManager.Default}" />
                     </Grid>
                 </ControlTemplate>
             </Setter>

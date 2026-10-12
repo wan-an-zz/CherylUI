@@ -1,0 +1,122 @@
+<Window
+    x:Class="CherylDialogSample.MainWindow"
+    x:DataType="vm:MainViewModel"
+    Height="700"
+    MinHeight="520"
+    MinWidth="560"
+    Title="CherylUI · Dialog chain API sample"
+    Width="860"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="clr-namespace:CherylUI.Controls;assembly=CherylUI"
+    xmlns:glassMorphism="clr-namespace:CherylUI.Controls.GlassMorphism;assembly=CherylUI"
+    xmlns:vm="clr-namespace:CherylDialogSample"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid>
+        <!--  CherylUI wall + navigation, and it already hosts CherylDialogManager.Default  -->
+        <controls:InteractiveContainer>
+            <ScrollViewer>
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    Margin="32,36,32,60"
+                    MaxWidth="640"
+                    Spacing="14">
+
+                    <TextBlock
+                        FontSize="32"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        Text="CherylUI · Dialog" />
+
+                    <TextBlock
+                        Classes="Secondary"
+                        HorizontalAlignment="Center"
+                        Text="SukiUI 同款链式 API：manager.CreateDialog().WithTitle(..).WithContent(..).TryShow()"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        Margin="0,4,0,0"
+                        Orientation="Horizontal"
+                        Spacing="12">
+                        <TextBlock Text="暗色主题" VerticalAlignment="Center" />
+                        <ToggleButton Classes="Switch" IsChecked="{Binding IsDark, Mode=TwoWay}" />
+                    </StackPanel>
+
+                    <glassMorphism:GlassCard
+                        CornerRadius="20"
+                        Margin="0,8,0,0"
+                        Padding="18">
+                        <StackPanel Spacing="10">
+                            <Button Command="{Binding ShowBasicDialog}" HorizontalAlignment="Stretch">
+                                <TextBlock Text="1 · 基础对话框：标题 + 文本 + 按钮" />
+                            </Button>
+
+                            <Button Command="{Binding ShowContentDialog}" HorizontalAlignment="Stretch">
+                                <TextBlock Text="2 · 自定义内容：TextBox / Slider / Switch" />
+                            </Button>
+
+                            <Button Command="{Binding ShowBackgroundDismissDialog}" HorizontalAlignment="Stretch">
+                                <TextBlock Text="3 · Dismiss().ByClickingBackground()" />
+                            </Button>
+
+                            <Button Command="{Binding ShowConfirmDialog}" HorizontalAlignment="Stretch">
+                                <TextBlock Text="4 · 确认框：await TryShowAsync() 拿结果" />
+                            </Button>
+
+                            <Button Command="{Binding ShowBottomDialog}" HorizontalAlignment="Stretch">
+                                <TextBlock Text="5 · 贴底弹出：AtBottom()" />
+                            </Button>
+
+                            <Button Command="{Binding ShowZeroConfigDialog}" HorizontalAlignment="Stretch">
+                                <TextBlock Text="6 · 零配置：InteractiveContainer.DialogManager" />
+                            </Button>
+
+                            <TextBlock
+                                Classes="Secondary"
+                                HorizontalAlignment="Center"
+                                Margin="0,8,0,0"
+                                Text="消息框样式 · OfType(NotificationType)" />
+
+                            <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <Button
+                                    Classes="Small"
+                                    Command="{Binding ShowSuccessDialog}"
+                                    Margin="4,0">
+                                    <TextBlock Text="Success" />
+                                </Button>
+                                <Button
+                                    Classes="Small"
+                                    Command="{Binding ShowWarningDialog}"
+                                    Margin="4,0">
+                                    <TextBlock Text="Warning" />
+                                </Button>
+                                <Button
+                                    Classes="Small"
+                                    Command="{Binding ShowErrorDialog}"
+                                    Margin="4,0">
+                                    <TextBlock Text="Error" />
+                                </Button>
+                            </WrapPanel>
+                        </StackPanel>
+                    </glassMorphism:GlassCard>
+
+                    <TextBlock
+                        Classes="Secondary"
+                        HorizontalAlignment="Center"
+                        Margin="0,6,0,0"
+                        Text="{Binding Status}"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </ScrollViewer>
+        </controls:InteractiveContainer>
+
+        <!--
+            The SukiUI-style host: one control, bound to a manager the view model owns.
+            Everything else (backdrop, transitions, background-click dismiss) is handled here.
+        -->
+        <controls:CherylDialogHost Manager="{Binding DialogManager}" />
+    </Grid>
+</Window>

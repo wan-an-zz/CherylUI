@@ -13,6 +13,7 @@
         <entry key="CherylCrossTest/CherylCrossTest/Views/MainWindow.axaml" value="CherylCrossTest/CherylCrossTest.Browser/CherylCrossTest.Browser.csproj" />
         <entry key="CherylCrossTest/CherylCrossTest/Views/MenuControl.axaml" value="CherylCrossTest/CherylCrossTest.Browser/CherylCrossTest.Browser.csproj" />
         <entry key="CherylCrossTest/CherylCrossTest/Views/SettingsPage.axaml" value="CherylCrossTest/CherylCrossTest.Desktop/CherylCrossTest.Desktop.csproj" />
+        <entry key="CherylDialogSample/MainWindow.axaml" value="CherylDialogSample/CherylDialogSample.csproj" />
         <entry key="CherylTest/App.axaml" value="CherylTest/CherylTest.csproj" />
         <entry key="CherylTest/ButtonStyles.axaml" value="CherylTest/CherylTest.csproj" />
         <entry key="CherylTest/CardStyles.axaml" value="CherylTest/CherylTest.csproj" />

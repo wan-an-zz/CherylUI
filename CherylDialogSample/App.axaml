@@ -1,0 +1,10 @@
+<Application
+    RequestedThemeVariant="Default"
+    x:Class="CherylDialogSample.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  CherylUI's Index.axaml brings the theme, the fonts and the dialog styles  -->
+    <Application.Styles>
+        <StyleInclude Source="avares://CherylUI/Index.axaml" />
+    </Application.Styles>
+</Application>
