@@ -92,7 +92,3 @@ The manager keeps the "one dialog at a time" contract: `TryShow()` returns `fals
 
 The previous static API — `InteractiveContainer.ShowDialog(...)` / `CloseDialog()` /
 `ShowToast(...)` — is untouched and still works.
-
-- 📖 Full reference (properties, style classes, differences from SukiUI): [`docs/Controls.md`](docs/Controls.md) § 14
-- ▶️ Runnable sample: `dotnet run --project CherylDialogSample`
-
