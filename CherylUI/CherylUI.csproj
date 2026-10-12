@@ -10,7 +10,7 @@
         <Description>https://github.com/kikipoulet/CherylUI</Description>
         <PackageProjectUrl>https://github.com/kikipoulet/CherylUI</PackageProjectUrl>
         <RepositoryUrl>https://github.com/kikipoulet/CherylUI</RepositoryUrl>
-        <PackageVersion>2.0.0</PackageVersion>
+        <PackageVersion>2.1.0</PackageVersion>
         <LangVersion>latest</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
