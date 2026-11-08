@@ -96,6 +96,28 @@ namespace CherylUI.Controls;
         }
     }
 
+    public class OffsetToMarginMultiConverter : IMultiValueConverter
+    {
+        public static readonly OffsetToMarginMultiConverter Instance = new OffsetToMarginMultiConverter();
+
+        public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
+        {
+            double offset = 0;
+
+            if (values.Count > 0 && values[0] is Vector vector)
+                offset = vector.Y * 0.7;
+
+            bool isBackVisible = values.Count > 1 && values[1] is true;
+
+            if (offset > 70)
+                offset = 70;
+
+            double left = isBackVisible ? 25 + offset : 25;
+
+            return new Thickness(left, 75 - offset, 0, -10 + (offset / 7));
+        }
+    }
+
     public class OffsetToMarginScrollConverter : IValueConverter
     {
         public static readonly OffsetToMarginScrollConverter Instance = new OffsetToMarginScrollConverter();

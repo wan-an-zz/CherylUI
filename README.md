@@ -111,3 +111,13 @@ public partial class LoginPage : SliverPage
 The default implementation still calls `MobileNavigation.Pop()`, so existing pages are
 unaffected. The template already wires the arrow's `Click` event to `GoBack`, so the
 override is picked up automatically — no XAML changes required.
+
+## Bug fix (2.1.2)
+
+`SliverPage` no longer lets the collapsing header title run into the back arrow.
+The title's left margin now receives both the scroll offset and `IsBackVisible`
+through a `MultiBinding`, so it slides clear of the button as the header shrinks.
+
+The previous template passed `IsBackVisible` as a `ConverterParameter`, where it never
+arrived as a `bool`; the title therefore always used the "no back button" margin and
+slid over the arrow at full scroll.

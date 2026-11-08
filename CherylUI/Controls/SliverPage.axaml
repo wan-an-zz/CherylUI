@@ -19,6 +19,7 @@
                             <controls:OffsetToHeightConverter x:Key="HeightConverter" />
                             <controls:OffsetToFontSizeConverter x:Key="FontSizeConverter" />
                             <controls:OffsetToMarginConverter x:Key="MarginConverter" />
+                            <controls:OffsetToMarginMultiConverter x:Key="MarginMultiConverter" />
                             <controls:OffsetToMarginScrollConverter x:Key="MarginScrollConverter" />
                         </Grid.Resources>
                         
@@ -41,7 +42,13 @@
                               <Border ClipToBounds="True">
                                 <glassmorphism:BlurBackground Margin="-30" />
                               </Border>
-                                <Grid Margin="{Binding #scrollView.Offset, Converter={StaticResource MarginConverter}, ConverterParameter={TemplateBinding IsBackVisible}}">
+                                <Grid>
+                                    <Grid.Margin>
+                                        <MultiBinding Converter="{StaticResource MarginMultiConverter}">
+                                            <Binding ElementName="scrollView" Path="Offset" />
+                                            <Binding Path="IsBackVisible" RelativeSource="{RelativeSource TemplatedParent}" />
+                                        </MultiBinding>
+                                    </Grid.Margin>
                                     <TextBlock
                                         FontSize="{Binding #scrollView.Offset, Converter={StaticResource FontSizeConverter}}"
                                         HorizontalAlignment="Left"
