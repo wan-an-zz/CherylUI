@@ -37,7 +37,7 @@ namespace CherylUI.Controls;
             set { SetValue(IsBackVisibleProperty, value ); }
         }
 
-        private void GoBack(object? sender, RoutedEventArgs e)
+        public virtual void GoBack(object? sender, RoutedEventArgs e)
         {
             MobileNavigation.Pop();
         }

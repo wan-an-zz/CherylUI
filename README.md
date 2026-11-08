@@ -92,3 +92,22 @@ The manager keeps the "one dialog at a time" contract: `TryShow()` returns `fals
 
 The previous static API — `InteractiveContainer.ShowDialog(...)` / `CloseDialog()` /
 `ShowToast(...)` — is untouched and still works.
+
+## Custom back navigation (2.1.1)
+
+`SliverPage.GoBack` is now `public virtual`, so the back arrow no longer has to pop the
+navigation stack. Override it in a derived page to run any action you want:
+
+```csharp
+public partial class LoginPage : SliverPage
+{
+    public LoginPage() => InitializeComponent();
+
+    public override void GoBack(object? sender, RoutedEventArgs e) =>
+        MobileNavigation.Push(new HomePage(), DisableComeBack: true);
+}
+```
+
+The default implementation still calls `MobileNavigation.Pop()`, so existing pages are
+unaffected. The template already wires the arrow's `Click` event to `GoBack`, so the
+override is picked up automatically — no XAML changes required.

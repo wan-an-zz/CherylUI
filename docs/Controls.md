@@ -296,7 +296,7 @@ Android 风格的「折叠标题栏 + 返回按钮 + 内置 ScrollViewer」页�
 | `IsBackVisible` | `bool` | **`false`** | Styled | 是否显示左上返回箭头。**默认不显示，要自己开** |
 
 - 内容区自带 `ScrollViewer`（`IsScrollInertiaEnabled=True`，隐藏滚动条），并预留了 170px 的头部高度。
-- **返回箭头点击时自动调用 `MobileNavigation.Pop()`**，所以 `SliverPage` 要和 `InteractiveContainer` + `MobileNavigation` 一起用，否则点返回没有效果。
+- **返回箭头点击时默认调用 `MobileNavigation.Pop()`**。`GoBack` 是 `public virtual`（2.1.1 起），可在派生页里重写以自定义返回动作；所以 `SliverPage` 要和 `InteractiveContainer` + `MobileNavigation` 一起用，否则点返回没有效果。
 - 模板内的转换器 `OffsetToHeightConverter` / `OffsetToMarginConverter` / `OffsetToFontSizeConverter` / `OffsetToMarginScrollConverter` 定义在 `CherylUI.Controls` 命名空间，可自行复用。
 
 ---
